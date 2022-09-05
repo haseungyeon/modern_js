@@ -1,0 +1,1 @@
+console.log(String.fromCharCode(0xd83d, 0xdcd6))

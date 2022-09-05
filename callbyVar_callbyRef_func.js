@@ -1,75 +1,75 @@
-console.log(`callbyVar`);
-function add1(x) { return x = x + 1; }
-var a = 3;
-var b = add1(a);
-console.log("a = " + a + " b = " + b);
+// console.log(`callbyVar`);
+// function add1(x) { return x = x + 1; }
+// var a = 3;
+// var b = add1(a);
+// console.log("a = " + a + " b = " + b);
 
-console.log(`callbyObj`);
-function add2(p) { p.x = p.x + 1; p.y = p.y + 1; return p; }
-var a = { x: 3, y: 4 };
-var b = add2(a);
-console.log(a, b);
+// console.log(`callbyObj`);
+// function add2(p) { p.x = p.x + 1; p.y = p.y + 1; return p; }
+// var a = { x: 3, y: 4 };
+// var b = add2(a);
+// console.log(a, b);
 
-// 객체 얕은 복사
-const person = {
-    favorite: { food: 'bread' },
-    study: function () { console.log('객체 공부') }
-};
+// // 객체 얕은 복사
+// const person = {
+//     favorite: { food: 'bread' },
+//     study: function () { console.log('객체 공부') }
+// };
 
-const person2 = Object.assign({}, person);
+// const person2 = Object.assign({}, person);
 
-//   (1)원본 객체의 프로퍼티 주소값 변경시 -----------
-person.favorite = 'too many';
+// //   (1)원본 객체의 프로퍼티 주소값 변경시 -----------
+// person.favorite = 'too many';
 
-console.log(person); // {favorite: 'too many', study: ƒ}
-console.log(person2); // {favorite: 'bread', study: ƒ}
+// console.log(person); // {favorite: 'too many', study: ƒ}
+// console.log(person2); // {favorite: 'bread', study: ƒ}
 
-//   (2) 사본 객체의 프로퍼티 주소값 변경시 -----------
+// //   (2) 사본 객체의 프로퍼티 주소값 변경시 -----------
 
-person2.study = function () { console.log('배고프다') };
+// person2.study = function () { console.log('배고프다') };
 
-console.log(person);
-// { 
-//  favorite: {food: 'bread'}, 
-//  study: {console.log('객체 공부')}
-// }
+// console.log(person);
+// // { 
+// //  favorite: {food: 'bread'}, 
+// //  study: {console.log('객체 공부')}
+// // }
 
-console.log(person2);
-// { 
-//  favorite: {food: 'bread'}, 
-//  study: {console.log('배고프다')}
-// } 
-
-
+// console.log(person2);
+// // { 
+// //  favorite: {food: 'bread'}, 
+// //  study: {console.log('배고프다')}
+// // } 
 
 
 
 
-// 객체 프로퍼티의 프로퍼티를 얕은 복사로 변경 시
-const person = {
-    favorite: { food: 'bread' },
-    study: function () { console.log('객체 공부') }
-};
 
-const person2 = Object.assign({}, person);
 
-//   (1)원본 객체의 프로퍼티의 프로퍼티 변경시 -----------
-person.favorite.food = 'ice-cream';
+// // 객체 프로퍼티의 프로퍼티를 얕은 복사로 변경 시
+// const person = {
+//     favorite: { food: 'bread' },
+//     study: function () { console.log('객체 공부') }
+// };
 
-console.log(person);
-// {favorite: {food: "ice-cream"}, study: ƒ}
+// const person2 = Object.assign({}, person);
 
-console.log(person2);
-// {favorite: {food: "ice-cream"}, study: ƒ}
+// //   (1)원본 객체의 프로퍼티의 프로퍼티 변경시 -----------
+// person.favorite.food = 'ice-cream';
 
-//   (2) 사본 객체의 프로퍼티의 프로퍼티 변경시 -----------
-person2.favorite.food = 'pasta';
+// console.log(person);
+// // {favorite: {food: "ice-cream"}, study: ƒ}
 
-console.log(person);
-// {favorite: {food: "pasta"}, study: ƒ}
+// console.log(person2);
+// // {favorite: {food: "ice-cream"}, study: ƒ}
 
-console.log(person2);
-// {favorite: {food: "pasta"}, study: ƒ}
+// //   (2) 사본 객체의 프로퍼티의 프로퍼티 변경시 -----------
+// person2.favorite.food = 'pasta';
+
+// console.log(person);
+// // {favorite: {food: "pasta"}, study: ƒ}
+
+// console.log(person2);
+// // {favorite: {food: "pasta"}, study: ƒ}
 
 
 

@@ -1,0 +1,1 @@
+console.log(Math.SQRT1_2)
